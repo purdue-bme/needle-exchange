@@ -1,13 +1,95 @@
+/*
+cssTemplate {
+	background-color:;
+
+	color:;
+	font-style:;
+	font-family:;
+	text-decoration:;
+	text-align:;
+
+	border:;
+	padding:;
+	position:;
+
+	transition-duration:;
+	cursor:;
+}
+*/
+
 body {
 	background-color: #000000;
 }
-
+body.leftAligned {
+	text-align: left;
+	margin-left: 25%;
+}
+.rightAligned{
+	text-align: right;
+	margin-right: 25%;
+}//body
 
 .title {
 	color: #C28E0E;
 	text-align: center;
 	font-family: "myriad-pro";
+}//title
+
+header{
+	background-color: #BAA892;
+	color: white;
+	font-family: "myriad-pro";
+	text-align: center;
 }
+h1 {
+	font-family: "myriad-pro";
+	color: white;
+	font-size: 80px;
+
+	margin:20px;
+}
+h1.centered {
+	text-align: center;
+}//header
+
+#openNav {
+	font-size:40px;
+	cursor:pointer;
+	text-align:left;
+	position: fixed;
+	left: 30px;
+	top: 20px;
+}
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #BAA892;
+    display: block;
+    transition: 0.3s;
+}
+.sidenav a:hover {
+    color: white;
+}
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}//side navigation
 
 .button {
 	background-color: #BAA892;
@@ -21,3 +103,33 @@ body {
   	transition-duration: 0.4s;
   	cursor: pointer;
 }
+.backButton:hover, .submitButton:hover, .goalButton:hover, .inlineButton:hover, {
+	background-color: white;
+    color: white;
+}
+.submitButton {
+	background-color: #2196F3;
+
+	color:black;
+	font-style:normal;
+	font-family: "myriad-pro";
+	text-decoration:none;
+
+	padding: 10px 20px;
+
+	transition-duration: 0.4s;
+	cursor: pointer;
+}
+.backButton {
+	background-color: #2196F3;
+
+	color:black;
+	font-style:normal;
+	font-family: "myriad-pro";
+	text-decoration:none;
+
+	padding: 10px 20px;
+
+	transition-duration: 0.4s;
+	cursor: pointer;
+}//button
