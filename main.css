@@ -19,6 +19,9 @@ cssTemplate {
 
 body {
 	background-color: #000000;
+	color: white;
+	font-family: "myriad-pro";
+
 }
 body.leftAligned {
 	text-align: left;
@@ -29,28 +32,28 @@ body.leftAligned {
 	margin-right: 25%;
 }//body
 
+h1 {
+	font-family: "myriad-pro";
+	color: white;
+	font-size: 80px;
+	margin:20px;
+}
+h1.centered {
+	text-align: center;
+}//body font
+
 .title {
 	color: #C28E0E;
 	text-align: center;
 	font-family: "myriad-pro";
 }//title
 
-header{
+header {
 	background-color: #BAA892;
 	color: white;
 	font-family: "myriad-pro";
 	text-align: center;
 }
-h1 {
-	font-family: "myriad-pro";
-	color: white;
-	font-size: 80px;
-
-	margin:20px;
-}
-h1.centered {
-	text-align: center;
-}//header
 
 #openNav {
 	font-size:40px;
@@ -108,7 +111,7 @@ h1.centered {
     color: white;
 }
 .submitButton {
-	background-color: #2196F3;
+	background-color: #BAA892;
 
 	color:black;
 	font-style:normal;
@@ -121,7 +124,7 @@ h1.centered {
 	cursor: pointer;
 }
 .backButton {
-	background-color: #2196F3;
+	background-color: #BAA892;
 
 	color:black;
 	font-style:normal;
