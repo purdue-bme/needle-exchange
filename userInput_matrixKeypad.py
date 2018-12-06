@@ -18,9 +18,9 @@ while True:
 	if i > 3:
 		print('Access denied. Too many attempts.')
                 break
-	#if keypad_input.isdigit() == false:
-	#	print('Passcode must be four numerical digits.')
-	#else:
+	if keypad_input.isdigit() == false:
+		print('Passcode must be four numerical digits.')
+	else:
 		if len(keypad_input) > 0:
 			if len(keypad_input) == 4:
 				for line in user_database:
