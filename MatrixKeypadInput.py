@@ -22,11 +22,23 @@ import digitalio
 import RPi.GPIO as GPIO #import RPi.GPIO as GPIO
 import adafruit_matrixkeypad as amk #import Adafruit Matrix Keypad Library as amk
 
+1, 2, 3,  4,  5,  6,  7,  8
 5, 6, 13, 19, 26, 16, 20, 21
 
-cols = [GPIO.setup(x,GPIO.IN) for x in (13, 5, 26)]
-crows = [GPIO.setup(x,GPIO.IN) for x in (6, 21
+cols = [GPIO.setup(x,GPIO.IN) for x in (13, 5, 26, 21)]
+rows = [GPIO.setup(x,GPIO.IN) for x in (6, 20, 16, 19)]
+keys = ((1, 2, 3, 'A'),
+        (4, 5, 6, 'B'),
+        (7, 8, 9, 'C'),
+        ('*', 0, '#', 'D'))
 
+keypad = amk.MatrixKeypad(rows, cols, keys)
+
+while True:
+        keys = keypad.pressed_keys
+        if keys:
+                print("Press: ", keys)
+                time.sleep(0.1)
 """
 import time
 import digitalio
@@ -43,7 +55,7 @@ keys = ((1, 2, 3, 'A'),
 keypad = adafruit_matrxikeypad.MatrixKeypad(rows, cols, keys)
 
 while True:
-  keys = keypad.presed_keys
+  keys = keypad.pressed_keys
   if keys:
     print("Press: ", keys)
     time.sleep(0.1)
