@@ -32,7 +32,7 @@ keys = ((1, 2, 3, 'A'),
         (7, 8, 9, 'C'),
         ('*', 0, '#', 'D'))
 
-keypad = amk.MatrixKeypad(rows, cols, keys)
+keypad = amk.Matrix_Keypad(rows, cols, keys)
 
 while True:
         keys = keypad.pressed_keys
