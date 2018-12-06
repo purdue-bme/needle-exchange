@@ -1,22 +1,27 @@
-import time
-import digitalio
-import board
-import adafruit_matrixkeypad
+#include "Arduino.h"
+#include "Keypad.h"
 
-# 3x4 matrix keypad on Raspberry Pi -
-# rows and columns are mixed up for https://www.adafruit.com/product/3845
-cols = [digitalio.DigitalInOut(x) for x in (board.D13, board.D5, board.D26, board.X1)]
-rows = [digitalio.DigitalInOut(x) for x in (board.D6, board.D21, board.D20, board.D19, board.X2)]
+const byte ROWS = 4; //four rows
+const byte COLS = 4; //four columns
+char keys[ROWS][COLS] = {
+  {'1','2','3','A'},
+  {'4','5','6','B'},
+  {'7','8','9','C'},
+  {'*','0','#','D'}
+};
+byte rowPins[ROWS] = {A3, A2, A1, A0}; //connect to the row pinouts of the keypad - four in a row
+byte colPins[COLS] = {MOSI, SCK, A5, A4}; //connect to the column pinouts of the keypad - four in a row
 
-keys = ((1, 2, 3, 'A'),
-        (4, 5, 6, 'B'),
-        (7, 8, 9, 'C'),
-        ('*', 0, '#', 'D'))
+Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
 
-keypad = adafruit_matrixkeypad.Matrix_Keypad(rows, cols, keys)
+void setup() {
+  Serial.begin(9600);
+}
 
-while True:
-    keys = keypad.pressed_keys
-    if keys:
-        print("Pressed: ", keys)
-    time.sleep(0.1)
+void loop() {
+  char key = keypad.getKey();
+
+  if (key != NO_KEY){
+    Serial.println(key);
+  }
+}
